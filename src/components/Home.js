@@ -1,11 +1,12 @@
 
-const Home = ()=>{
+const Home = () => {
 
-    return(
+    return (
 
-        <>
-        <h1>tbh</h1>
-        </>
+        <div className="home-container">
+            <h2>ergv</h2>
+        </div>
+
     )
 
 }
