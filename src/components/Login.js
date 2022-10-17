@@ -1,37 +1,82 @@
-import {Link} from 'react-router-dom'
-import './Login.css'
+import { Button, Checkbox, Form, Input } from 'antd';
+import "antd/dist/antd.min.css";
+import "./Login.css"
+import React from 'react';
 
 const Login = () => {
-
+    const onFinish = (values) => {
+      console.log('Success:', values);
+    };
+  
+    const onFinishFailed = (errorInfo) => {
+      console.log('Failed:', errorInfo);
+    };
+  
     return (
-
-        <div className='login-container'>
-            
-            <form className='form'>
-                <div><h1>Login</h1></div>
-                        <div className='username'>
-                            <input className='username-input' type="text" placeholder='username/email' />
-                        </div>
-                        <div className='password'>
-                            <input className='password-input' type="text" placeholder='password' />
-                        </div>
-                        <div className='login-btn'>
-                            <Link className='login-btn' to='/dashboard'>Login</Link>
-                        </div>
-                        {/* <div className='remember-forget'>
-                            <div className='remember'>
-                                <input className='checkbox' type="checkbox" />
-                                <Link className='remember-me' to='/rememberme' >remember me</Link>
-                            </div>
-                            <div className='forget'>
-                                <Link className='forget-password' to='/forgetpassword' >forget password</Link>
-
-                            </div>
-                        </div> */}
-
-                    </form>
-        </div>
-
-    )
-}
-export default Login
+      <Form
+        name="basic"
+        labelCol={{
+          span: 8,
+        }}
+        wrapperCol={{
+          span: 16,
+        }}
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="off"
+      >
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your username!',
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+  
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your password!',
+            },
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
+  
+        <Form.Item
+          name="remember"
+          valuePropName="checked"
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
+        >
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
+  
+        <Form.Item
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
+        >
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+    );
+  };
+  
+  export default Login
