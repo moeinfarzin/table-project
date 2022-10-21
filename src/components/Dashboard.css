@@ -22,3 +22,11 @@ h1 {
     justify-content: center;
 
 }
+.addevents{
+    display: flex;
+    flex-wrap: wrap;
+}
+.eventname , .eventaddress {
+    display: flex;
+    flex-direction: column;
+}

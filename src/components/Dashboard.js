@@ -1,5 +1,7 @@
-import { Table } from 'antd';
-import React from 'react';
+
+import { Button, Modal, Table } from 'antd';
+import React, { useState } from 'react';
+
 const columns = [
   {
     title: 'event name ',
@@ -12,57 +14,50 @@ const columns = [
   },
 ];
 const data = [];
-for (let i = 0; i < 46; i++) {
+for (let i = 1; i < 10; i++) {
   data.push({
     key: i,
     name: `Edward King ${i}`,
     address: `London, Park Lane no. ${i}`,
   });
-}
+};
+
+
+
 const Dashboard = () => {
-  // const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-  // const onSelectChange = (newSelectedRowKeys) => {
-  //   console.log('selectedRowKeys changed: ', selectedRowKeys);
-  //   setSelectedRowKeys(newSelectedRowKeys);
-  // };
-  // const rowSelection = {
-  //   selectedRowKeys,
-  //   onChange: onSelectChange,
-  //   selections: [
-  //     Table.SELECTION_ALL,
-  //     Table.SELECTION_INVERT,
-  //     Table.SELECTION_NONE,
-  //     {
-  //       key: 'odd',
-  //       text: 'Select Odd Row',
-  //       onSelect: (changableRowKeys) => {
-  //         let newSelectedRowKeys = [];
-  //         newSelectedRowKeys = changableRowKeys.filter((_, index) => {
-  //           if (index % 2 !== 0) {
-  //             return false;
-  //           }
-  //           return true;
-  //         });
-  //         setSelectedRowKeys(newSelectedRowKeys);
-  //       },
-  //     },
-  //     {
-  //       key: 'even',
-  //       text: 'Select Even Row',
-  //       onSelect: (changableRowKeys) => {
-  //         let newSelectedRowKeys = [];
-  //         newSelectedRowKeys = changableRowKeys.filter((_, index) => {
-  //           if (index % 2 !== 0) {
-  //             return true;
-  //           }
-  //           return false;
-  //         });
-  //         setSelectedRowKeys(newSelectedRowKeys);
-  //       },
-  //     },
-  //   ],
-  // };
-  return <Table columns={columns} dataSource={data} />;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+  return (
+    <div>
+      <div>
+        <Button type="primary" onClick={showModal}>
+          Add Events
+        </Button>
+        <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+          <div className="addevents">
+            <input className='eventname' placeholder='Events Name' type="text" />
+            <input className='eventaddress' placeholder='Events Address' type="text" />
+          </div>
+        </Modal>
+      </div>
+      <div>
+        <Table columns={columns} dataSource={data} />
+      </div>
+    </div>
+    //add events
+
+  )
 };
 
 export default Dashboard

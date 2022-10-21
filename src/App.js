@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 
 
 
+
 function App() {
   return (
     <div className='app'>
@@ -14,9 +15,7 @@ function App() {
 
           <Route path='/' element={<Login />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/dashboard/dailyevent' element={<Home />} />
-
-
+          <Route path='/dailyevent' element={<Home />} />
         </Routes>
       </HashRouter>
     </div>
