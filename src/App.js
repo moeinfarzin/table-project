@@ -15,7 +15,7 @@ function App() {
 
           <Route path='/' element={<Login />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/dailyevent' element={<Home />} />
+          <Route path='/dailyevent/:userId' element={<Home />} />
         </Routes>
       </HashRouter>
     </div>

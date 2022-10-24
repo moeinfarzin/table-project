@@ -1,74 +1,86 @@
-import { Table } from 'antd';
+import { Checkbox, Table } from 'antd';
 import React from 'react';
 const columns = [
     {
-        title: 'Full Name',
-        width: 100,
+        title: ' ',
+        width: 120,
         dataIndex: 'name',
         key: 'name',
         fixed: 'left',
+
     },
+
+
     {
-        title: 'saturday',
-        dataIndex: 'address',
-        key: '2',
-        width: 150,
-    },
-    {
-        title: 'sonday',
-        dataIndex: 'address',
-        key: '3',
-        width: 150,
-    },
-    {
-        title: 'monday',
-        dataIndex: 'address',
-        key: '4',
-        width: 150,
-    },
-    {
-        title: 'tuesday',
-        dataIndex: 'address',
-        key: '5',
-        width: 150,
-    },
-    {
-        title: 'wednesday',
-        dataIndex: 'address',
+        title: '1:00 AM',
+        dataIndex: 'custom',
         key: '1',
-        width: 150,
+        render: () => <Checkbox />
+
     },
     {
-        title: 'thursday',
-        dataIndex: 'address',
-        key: '6',
-        width: 150,
+        title: '3:00 AM',
+        dataIndex: 'custom',
+        key: '2',
+        render: () => <Checkbox />
     },
     {
-        title: 'friday',
-        dataIndex: 'address',
-        key: '7',
-        width: 150,
+        title: '5:00 Am',
+        dataIndex: 'custom',
+        key: '3',
+        render: () => <Checkbox />
     },
-
-
+    {
+        title: '7:00 AM',
+        dataIndex: 'custom',
+        key: '4',
+        render: () => <Checkbox />
+    },
+    {
+        title: '9:00 AM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
 ];
-const data = [];
-for (let i = 0; i < 100; i++) {
-    data.push({
-        key: i,
-        name: `Edrward ${i}`,
-        address: `London Park no. ${i}`,
-    });
-}
+const data = [
+    {
+        key: '1',
+        name: 'sunday',
+        address: 'New York Park',
+    },
+    {
+        key: '2',
+        name: 'monday',
+        address: 'London Park',
+    },
+    {
+        key: '3',
+        name: 'tuesday',
+        address: 'London Park',
+    },
+    {
+        key: '4',
+        name: 'wednesday',
+        address: 'London Park',
+    },
+    {
+        key: '5',
+        name: 'thursday',
+        address: 'London Park',
+    },
+    {
+        key: '6',
+        name: 'friday',
+        address: 'London Park',
+    },
+    {
+        key: '7',
+        name: 'saturday',
+        address: 'London Park',
+    },
+];
 const Home = () => (
-    <Table
-        columns={columns}
-        dataSource={data}
-        scroll={{
-            x: 1500,
-            y: 300,
-        }}
-    />
+    <Table columns={columns} dataSource={data} scroll={{ x: 1300, }} />
 );
 export default Home;
