@@ -2,13 +2,11 @@ h1 {
     text-align: center;
     margin-top: 40px;
 }
-
 .dashboard-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    width: 50%;
     margin: auto;
 
 }
@@ -22,11 +20,26 @@ h1 {
     justify-content: center;
 
 }
+
+
+
+.btn-container{    
+display: flex;
+justify-content: flex-end;
+text-align: right;
+}
+
 .addevents{
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
 }
 .eventname , .eventaddress {
     display: flex;
     flex-direction: column;
+}
+.ant-btn-primary{
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
 }

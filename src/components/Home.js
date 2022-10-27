@@ -42,6 +42,49 @@ const columns = [
         key: '5',
         render: () => <Checkbox />
     },
+    {
+        title: '11:00 AM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+    {
+        title: '1:00 PM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+    {
+        title: '3:00 PM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+    {
+        title: '5:00 PM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+    {
+        title: '7:00 PM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+    {
+        title: '9:00 PM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+    {
+        title: '11:00 PM',
+        dataIndex: 'custom',
+        key: '5',
+        render: () => <Checkbox />
+    },
+
 ];
 const data = [
     {
