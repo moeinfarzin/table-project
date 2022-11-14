@@ -43,3 +43,8 @@ text-align: right;
     text-align: right;
     justify-content: flex-end;
 }
+
+.ant-pagination{
+
+display: none;
+}

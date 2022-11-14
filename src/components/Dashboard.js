@@ -86,10 +86,10 @@ const Dashboard = () => {
         </Button>
         <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <div className="addevents">
-            <Input showCount maxLength={20} onChange={onChange} />
+            <Input placeholder='title' showCount maxLength={20} onChange={onChange} />
             <br />
             <br />
-            <TextArea showCount maxLength={100} onChange={onChange} />
+            <TextArea placeholder='description' showCount maxLength={100} onChange={onChange} />
           </div>
         </Modal>
       </div>

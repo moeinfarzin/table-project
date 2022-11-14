@@ -1,5 +1,24 @@
-import { Checkbox, Table } from 'antd';
+import { Checkbox, Table, message } from 'antd';
 import React from 'react';
+
+
+const success = () => {
+    message.success('success');
+  };
+  
+  
+const hours = [...Array(16).keys()].map((x) => (
+    {
+        title: x + 8 + (8 + x >= 12 ? ":00 PM" : ":00 AM"),
+        dataIndex: 'custom',
+        key: x,
+        render: () => <Checkbox onClick={success} />
+
+    }
+))
+
+console.log(hours)
+
 const columns = [
     {
         title: ' ',
@@ -10,82 +29,10 @@ const columns = [
 
     },
 
-
-    {
-        title: '1:00 AM',
-        dataIndex: 'custom',
-        key: '1',
-        render: () => <Checkbox />
-
-    },
-    {
-        title: '3:00 AM',
-        dataIndex: 'custom',
-        key: '2',
-        render: () => <Checkbox />
-    },
-    {
-        title: '5:00 Am',
-        dataIndex: 'custom',
-        key: '3',
-        render: () => <Checkbox />
-    },
-    {
-        title: '7:00 AM',
-        dataIndex: 'custom',
-        key: '4',
-        render: () => <Checkbox />
-    },
-    {
-        title: '9:00 AM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '11:00 AM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '1:00 PM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '3:00 PM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '5:00 PM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '7:00 PM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '9:00 PM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
-    {
-        title: '11:00 PM',
-        dataIndex: 'custom',
-        key: '5',
-        render: () => <Checkbox />
-    },
+    ...hours
 
 ];
+console.log(columns)
 const data = [
     {
         key: '1',
