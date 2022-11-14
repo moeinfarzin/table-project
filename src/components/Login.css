@@ -8,8 +8,26 @@
     margin-top: 100px;
 }
 
+
+Form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 100%;
+}
 .btn-submit {
 
+    background-color: #1890ff;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+}
+.btn-signup{
+    align-items: flex-end;
+    text-align: right;
     background-color: #1890ff;
     color: white;
     padding: 5px;

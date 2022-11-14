@@ -1,81 +1,75 @@
 import { Checkbox, Form, Input } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import "antd/dist/antd.min.css";
 import "./Login.css"
 import React from 'react';
 import { Link } from "react-router-dom"
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values);
+
+
+    const onFinish = (values) => {
+    console.log('Received values of form: ', values);
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
 
   return (
-    <div>
-    <Form
-      name="basic"
-      labelCol={{
-        span: 8,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
+    <div className='container'>
+      <div className='btn-container'>
+        <Link to="/signup" className="btn-signup">Sign up</Link>
+      </div>
+      <Form
+      name="normal_login"
+      className="login-form"
       initialValues={{
         remember: true,
       }}
       onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
     >
       <Form.Item
-        label="Username"
         name="username"
         rules={[
           {
             required: true,
-            message: 'Please input your username!',
+            message: 'Please input your Username!',
           },
         ]}
       >
-        <Input />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
       </Form.Item>
-
       <Form.Item
-        label="Password"
         name="password"
         rules={[
           {
             required: true,
-            message: 'Please input your password!',
+            message: 'Please input your Password!',
           },
         ]}
       >
-        <Input.Password />
+        <Input
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="Password"
+        />
+      </Form.Item>
+      <Form.Item>
+        <Form.Item name="remember" valuePropName="checked" noStyle>
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
+
+        <a className="login-form-forgot" href="/">
+          Forgot password
+        </a>
       </Form.Item>
 
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <Link className="btn-submit" type="primary" htmlType="submit" to="/dashboard">Login</Link>
+      <Form.Item>
+        <Link to="/dashboard" type="primary" htmlType="submit" className="btn-submit">
+          Log in
+        </Link>
+        
       </Form.Item>
     </Form>
+
     </div>
   );
 };
